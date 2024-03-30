@@ -1,0 +1,9 @@
+.lookup-parameters__content {
+    display: flex;
+    gap: 20px;
+}
+
+.lookup-parameters__content > div {
+    flex-basis: 30%;
+}
+
