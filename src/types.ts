@@ -1,6 +1,15 @@
-export type Level = 'A' | 'B' | 'C' | 'D';
+export const levels = ['A', 'B', 'C', 'D'] as const;
 
-export type CompetencyData = Record<string, Level | number> & {
+export type Level = (typeof levels)[number]; // 'A'|'B'|'C'|'D'
+
+export enum CompetencyTypeValue {
+  LEVEL = 'level',
+  NUMBER = 'number',
+}
+
+export type CompetencyType = number | Level;
+
+export type CompetencyData = Record<string, CompetencyType> & {
   Participant: string;
   Total: string | number | null;
 };
